@@ -28,8 +28,11 @@ class Post(models.Model):
         null=True,
     )
 
+    class Meta:
+        ordering = ['author']
+
     def __str__(self):
-        return self.text
+        return self.text[:25]
 
 
 class Comment(models.Model):
